@@ -12,7 +12,7 @@ Uma simples aplicação com nodejs, postgresql e pgadmin em container docker **s
 
 ## Pastas
 #### data/postgres = volume docker para postgresql
-#### /var/www/exemplo-nodejs
+#### /var/www/exemplo-nodejs = volume entre container e host
 
 ## Comandos
 #### docker build -t "tag-name" usuario_docker_hub/nome_aplicação:versão
