@@ -1,0 +1,41 @@
+version: '3.7'
+
+services: 
+  db:
+    image: postgres
+    container_name: postgres_nodejs
+    environment: 
+      - POSTGRES_DB=nodejs_application
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - TZ=GMT
+    volumes: 
+      - "./data/postgres:/var/lib/postgresql/data"
+    ports: 
+      - 5432:5432
+    networks: 
+      node_network:
+        ipv4_address: 172.20.1.2
+  
+  web:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    environment: 
+      - PGADMIN_DEFAULT_EMAIL=user@email.com
+      - PGADMIN_DEFAULT_PASSWORD=PgAdmin2021!
+    ports: 
+      - 16543:80
+    depends_on:
+      - db
+    networks: 
+      node_network:
+        ipv4_address:  172.20.1.4
+
+networks: 
+  node_network:
+    driver: bridge
+    ipam: 
+      config: 
+        - subnet: 172.20.1.0/16
+          gateway: 172.20.1.1 
+    
