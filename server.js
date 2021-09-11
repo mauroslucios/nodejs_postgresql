@@ -11,3 +11,6 @@ app.get('/',(req,res)=>{
 })
 app.listen(HOST,PORT);
 console.log('Running in http://' + HOST+':'+PORT);
+
+//db
+const db = require("./db");

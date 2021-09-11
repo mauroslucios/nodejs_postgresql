@@ -13,6 +13,7 @@ Uma simples aplicação com nodejs, postgresql e pgadmin em container docker **s
 ## Pastas
 #### data/postgres = volume docker para postgresql
 #### /var/www/exemplo-nodejs = volume entre container e host
+#### sql = onde estão os arquivos ".sql" de exemplos copie os mesmos para data/postgres se desejar executar os testes no banco
 
 ## Comandos
 #### docker build -t "tag-name" usuario_docker_hub/nome_aplicação:versão
@@ -21,6 +22,7 @@ Uma simples aplicação com nodejs, postgresql e pgadmin em container docker **s
 #### docker inspect container_id
 #### docker exec -it postgres_nodejs psql -U postgres
 #### docker exec -it postgres_nodejs psql -U postgres -d banco -1 -f /var/lib/postgresql/data/001_create_table_up.sql => executa script.sql dentro do container populando o banco
+#### docker exec -it postgres_nodejs psql -U postgres -d banco -1 -f /var/lib/postgresql/data/002_insert_table_up.sql => executa script.sql dentro do container populando o banco
 
 
 #### http://localhost:3000

@@ -1,0 +1,6 @@
+CREATE TABLE clientes(
+    id SERIAL CONSTRAINT pk_id_cliente PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    idade INTEGER NOT NULL,
+    uf VARCHAR(2) NOT NULL
+);
