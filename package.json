@@ -3,10 +3,15 @@
     "version": "1.0.0",
     "description": "Node js on postgresql",
     "author": "maurolucios@gmail.com",
+    "license": "ISC",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "keywords": [
+        "javascript,node,docker,postgresql"
+    ],
     "dependencies": {
         "express": "4.17.1"
     }   
